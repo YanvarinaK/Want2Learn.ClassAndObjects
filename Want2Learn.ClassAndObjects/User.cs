@@ -13,6 +13,33 @@ namespace Want2Learn.ClassAndObjects
         private string password;
         private string fullName;
         private bool isDeleted;
+        private Guid id;
+
+        public User()
+        {
+
+        }
+
+        public User(string login, string email, string password, string fullName)
+        {
+            this.login = login;
+            this.email = email;
+            this.password = password;
+            this.fullName = fullName;
+            isDeleted = false;
+            id = Guid.NewGuid();
+
+        }
+
+        public void SetId(Guid value)
+        {
+            id = value;
+        }
+
+        public Guid GetId()
+        {
+            return id;
+        }
 
         public void SetLogin(string value)
         {
