@@ -10,7 +10,7 @@ namespace Want2Learn.ClassAndObjects
     {
         public Person FirstHighest(Person[] array)
         {
-            if (array == null)
+            if ((array == null) || (array.Length == 0))
             {
                 return null;
             }
@@ -27,11 +27,11 @@ namespace Want2Learn.ClassAndObjects
 
         public Person FirstHighest(List<Person> list)
         {
-            if (list == null)
+            if ((list == null) || (list.Count == 0))
             {
                 return null;
             }
-            Person highest = new Person();
+            Person highest = list[0];
             for (int i = 0; i < list.Count; i++)
             {
                 if (list[i].Height > highest.Height)
@@ -44,6 +44,10 @@ namespace Want2Learn.ClassAndObjects
 
         public void Print(Person[] array)
         {
+            if (array == null)
+            {
+                return;
+            }
             for (int i = 0; i < array.Length; i++)
             {
                 Print(array[i]);
@@ -53,6 +57,10 @@ namespace Want2Learn.ClassAndObjects
 
         public void Print(List<Person> list)
         {
+            if (list == null)
+            {
+                return;
+            }
             foreach (var item in list)
             {
                 Print(item);
