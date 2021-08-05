@@ -52,5 +52,15 @@ namespace Want2Learn.ClassAndObjects
             }
         }
 
+        public Employee(Guid id, DateTime employementDate, string position, string fullName, decimal salary, DateTime dateOfBirth)
+        {
+            Id = id;
+            EmployementDate = employementDate;
+            Position = position;
+            FullName = fullName;
+            Salary = salary;
+            DateOfBirth = dateOfBirth;
+        }
+
     }
 }
