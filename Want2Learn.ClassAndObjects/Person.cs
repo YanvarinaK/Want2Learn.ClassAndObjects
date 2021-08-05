@@ -30,6 +30,10 @@ namespace Want2Learn.ClassAndObjects
             }
             set
             {
+                if (value == null)
+                {
+                    throw new Exception("ValidationException");
+                }
                 firstName = value;
             }
         }
@@ -41,7 +45,7 @@ namespace Want2Learn.ClassAndObjects
             {
                 if (value == null)
                 {
-                    middleName = String.Empty;
+                    throw new Exception("ValidationException");
                 }
                 else
                 {
@@ -59,6 +63,10 @@ namespace Want2Learn.ClassAndObjects
         {
             set
             {
+                if (value == null)
+                {
+                    throw new Exception("ValidationException");
+                }
                 lastName = value;
             }
             get
@@ -87,7 +95,7 @@ namespace Want2Learn.ClassAndObjects
             {
                 if (value < 0)
                 {
-                    height = 0;
+                    throw new Exception("ValidationException");
                 }
                 else
                 {
@@ -107,7 +115,7 @@ namespace Want2Learn.ClassAndObjects
             {
                 if (value < 0)
                 {
-                    weight = 0;
+                    throw new Exception("ValidationException");
                 }
                 else
                 {
@@ -123,7 +131,7 @@ namespace Want2Learn.ClassAndObjects
             {
                 if (value < 0)
                 {
-                    age = 0;
+                    throw new Exception("ValidationException");
                 }
                 else
                 {
