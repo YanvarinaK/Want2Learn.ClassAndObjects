@@ -152,5 +152,11 @@ namespace Want2Learn.ClassAndObjects
             this.weight = weight;
             this.age = age;
         }
+
+        public string GetInfo()
+        {
+            string Info = String.Format("ФИО: {0} {1} {2}, пол: {3}, рост: {4} см, вес: {5} кг, возраст: {6}", lastName, firstName, middleName, gender, height, weight, age);
+            return Info;
+        }
     }
 }
