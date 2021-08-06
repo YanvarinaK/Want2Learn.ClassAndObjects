@@ -85,7 +85,7 @@ namespace Want2Learn.ClassAndObjects
             {
                 return 0;
             }
-            int sumOfAges = 0;
+            double sumOfAges = 0;
             for (int i = 0; i < list.Count; i++)
             {
                 sumOfAges = sumOfAges + list[i].Age;
