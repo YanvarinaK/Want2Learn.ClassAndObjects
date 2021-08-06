@@ -123,5 +123,52 @@ namespace Want2Learn.ClassAndObjects
             double AverWeight = sumOfWeights / list.Count;
             return AverWeight;
         }
+
+        public List<Person> GetMaleList(List<Person> list)
+        {
+            List<Person> maleList = new List<Person>();
+            if (list == null)
+            {
+                return null;
+            }
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Gender == Gender.Man)
+                {
+                    maleList.Add(list[i]);
+                }
+            }
+            return maleList;
+        }
+
+        public List<Person> GetFemaleList(List<Person> list)
+        {
+            List<Person> feMaleList = new List<Person>();
+            if (list == null)
+            {
+                return null;
+            }
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Gender == Gender.Woman)
+                {
+                    feMaleList.Add(list[i]);
+                }
+            }
+            return feMaleList;
+        }
+
+        public List<Person> GetList(List<Person> list, Gender gender)
+        {
+            switch (gender)
+            {
+                case Gender.Man:
+                    return GetMaleList(list);
+                case Gender.Woman:
+                    return GetFemaleList(list);
+                default:
+                    return null;
+            }
+        }
     }
 }
