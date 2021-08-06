@@ -78,5 +78,50 @@ namespace Want2Learn.ClassAndObjects
             Console.WriteLine(output);
             Console.WriteLine();
         }
+
+        public double GetAverageAge(List<Person> list)
+        {
+            if ((list == null) || (list.Count == 0))
+            {
+                return 0;
+            }
+            int sumOfAges = 0;
+            for (int i = 0; i < list.Count; i++)
+            {
+                sumOfAges = sumOfAges + list[i].Age;
+            }
+            double AverAge = sumOfAges / list.Count;
+            return AverAge;
+        }
+
+        public double GetAverageHeight(List<Person> list)
+        {
+            if ((list == null) || (list.Count == 0))
+            {
+                return 0;
+            }
+            double sumOfHeights = 0;
+            for (int i = 0; i < list.Count; i++)
+            {
+                sumOfHeights = sumOfHeights + list[i].Height;
+            }
+            double AverHeight = sumOfHeights / list.Count;
+            return AverHeight;
+        }
+
+        public double GetAverageWeight(List<Person> list)
+        {
+            if ((list == null) || (list.Count == 0))
+            {
+                return 0;
+            }
+            double sumOfWeights = 0;
+            for (int i = 0; i < list.Count; i++)
+            {
+                sumOfWeights = sumOfWeights + list[i].Weight;
+            }
+            double AverWeight = sumOfWeights / list.Count;
+            return AverWeight;
+        }
     }
 }
