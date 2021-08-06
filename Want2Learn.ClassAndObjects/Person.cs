@@ -122,6 +122,10 @@ namespace Want2Learn.ClassAndObjects
                     weight = value;
                 }
             }
+            get
+            {
+                return weight;
+            }
         }
 
         private int age; 
