@@ -14,7 +14,8 @@ namespace Want2Learn.ClassAndObjects
 
         private const int MAXMINSEC = 59;
 
-        private const int MAXHOUR = 23;
+        private const int COUNTHOUR = 24;
+
         public int Hour { get; set; }
 
         public int Minute { get; set; }
@@ -28,17 +29,17 @@ namespace Want2Learn.ClassAndObjects
 
         public Time(int hour, int minute, int second)
         {
-            if ((hour > 23) || (hour < 0))
+            if ((hour >= COUNTHOUR) || (hour < 0))
             {
                 throw new Exception(" Hour Validation Exception");
             }
             Hour = hour;
-            if ((minute > 59) || (minute < 0))
+            if ((minute > MAXMINSEC) || (minute < 0))
             {
                 throw new Exception(" Minute Validation Exception");
             }
             Minute = minute;
-            if ((second > 59) || (second < 0))
+            if ((second > MAXMINSEC) || (second < 0))
             {
                 throw new Exception(" Second Validation Exception");
             }
@@ -47,12 +48,12 @@ namespace Want2Learn.ClassAndObjects
 
         public Time(int hour, int minute)
         {
-            if ((hour > 23) || (hour < 0))
+            if ((hour >= COUNTHOUR) || (hour < 0))
             {
                 throw new Exception(" Hour Validation Exception");
             }
             Hour = hour;
-            if ((minute > 59) || (minute < 0))
+            if ((minute > MAXMINSEC) || (minute < 0))
             {
                 throw new Exception(" Minute Validation Exception");
             }
@@ -62,7 +63,7 @@ namespace Want2Learn.ClassAndObjects
 
         public Time(int hour)
         {
-            if ((hour > 23) || (hour < 0))
+            if ((hour >= COUNTHOUR) || (hour < 0))
             {
                 throw new Exception(" Hour Validation Exception");
             }
@@ -90,9 +91,9 @@ namespace Want2Learn.ClassAndObjects
                 Hour++;
                 Minute = Minute - SECINMIN;
             }
-            if (Hour > MAXHOUR)
+            if (Hour >= COUNTHOUR)
             {
-                Hour = Hour % 24;
+                Hour = Hour % COUNTHOUR;
             }
 
         }
@@ -109,9 +110,9 @@ namespace Want2Learn.ClassAndObjects
                 Hour++;
                 Minute = Minute - SECINMIN;
             }
-            if (Hour > MAXHOUR)
+            if (Hour >= COUNTHOUR)
             {
-                Hour = Hour % 24;
+                Hour = Hour % COUNTHOUR;
             }
         }
 
@@ -119,9 +120,9 @@ namespace Want2Learn.ClassAndObjects
         {
             Hour = Hour + hour;
 
-            if (Hour > MAXHOUR)
+            if (Hour >= COUNTHOUR)
             {
-                Hour = Hour % 24;
+                Hour = Hour % COUNTHOUR;
             }
         }
 
