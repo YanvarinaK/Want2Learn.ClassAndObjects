@@ -48,6 +48,7 @@
     <Compile Include="EmployeeService.cs" />
     <Compile Include="Enums\Month.cs" />
     <Compile Include="Enums\SortDirection.cs" />
+    <Compile Include="FindAlgorithms.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="OtherAlgorithms.cs" />
     <Compile Include="Person.cs" />
