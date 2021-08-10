@@ -75,6 +75,15 @@ namespace Want2Learn.ClassAndObjects
             }
         }
 
+        public string FullName
+        {
+            get
+            {
+                string fullName = String.Format("{0} {1} {2}", LastName, FirstName, MiddleName);
+                return fullName;
+            }
+        }
+
         private Gender gender;
         public Gender Gender
         {

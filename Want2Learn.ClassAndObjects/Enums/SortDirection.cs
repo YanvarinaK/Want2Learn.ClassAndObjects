@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Want2Learn.ClassAndObjects
+namespace Want2Learn.ClassAndObjects.Enums
 {
-    public enum Gender
+    public enum SortDirection
     {
-        Man = 1,
-        Woman
+        Asc,
+        Desc
     }
 }
