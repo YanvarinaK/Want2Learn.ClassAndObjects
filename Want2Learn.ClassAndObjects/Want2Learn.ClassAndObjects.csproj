@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeService.cs" />
     <Compile Include="Enums\Month.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="OtherAlgorithms.cs" />
