@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Want2Learn.ClassAndObjects
 {
-    class Employee
+    public class Employee
     {
         public Guid Id { get; set; }
 
@@ -60,6 +60,17 @@ namespace Want2Learn.ClassAndObjects
             FullName = fullName;
             Salary = salary;
             DateOfBirth = dateOfBirth;
+        }
+
+        public Employee()
+        {
+        
+        }
+
+        public string GetInfo()
+        {
+            string info = String.Format("ФИО: {0}, Возраст: {1}, Опыт работы: {2}, Должность: {3}, ЗП: {4} ", FullName, Age, Experience, Position, Salary);
+            return info;
         }
 
     }
