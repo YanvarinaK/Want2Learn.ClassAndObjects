@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Want2Learn.ClassAndObjects.Enums;
 
 namespace Want2Learn.ClassAndObjects
 {
@@ -166,6 +167,81 @@ namespace Want2Learn.ClassAndObjects
                     return GetMaleList(list);
                 case Gender.Woman:
                     return GetFemaleList(list);
+                default:
+                    return null;
+            }
+        }
+
+        public List<Person> SortByHeight(List<Person> persons, SortDirection type)
+        {
+            if (persons == null)
+            {
+                return null;
+            }
+
+            switch (type)
+            {
+                case SortDirection.Asc:
+                    return persons.OrderBy(u => u.Height).ToList();
+                case SortDirection.Desc:
+                    return persons.OrderByDescending(u => u.Height).ToList();
+                default:
+                    return null;
+            }
+        }
+
+        public List<Person> SortByWeight(List<Person> persons, SortDirection type)
+        {
+            if (persons == null)
+            {
+                return null;
+            }
+
+            switch (type)
+            {
+                case SortDirection.Asc:
+                    return persons.OrderBy(u => u.Weight).ToList();
+                   
+                case SortDirection.Desc:
+                    return persons.OrderByDescending(u => u.Weight).ToList();
+                default:
+                    return null;
+            }
+        }
+
+        public List<Person> SortByFullname(List<Person> persons, SortDirection type)
+        {
+            if (persons == null)
+            {
+                return null;
+            }
+
+            switch (type)
+            {
+                case SortDirection.Asc:
+                    List<Person> AscSort = persons.OrderBy(u => u.FullName).ToList();
+                    return AscSort;
+                case SortDirection.Desc:
+                   List<Person> DescSort = persons.OrderByDescending(u => u.FullName).ToList();
+                    return DescSort;
+                default:
+                    return null;
+            }
+        }
+
+        public List<Person> SortByGender(List<Person> persons, SortDirection type)
+        {
+            if (persons == null)
+            {
+                return null;
+            }
+
+            switch (type)
+            {
+                case SortDirection.Asc:
+                    return persons.OrderBy(u => u.Gender).ToList();
+                case SortDirection.Desc:
+                    return persons.OrderByDescending(u => u.Gender).ToList();
                 default:
                     return null;
             }
