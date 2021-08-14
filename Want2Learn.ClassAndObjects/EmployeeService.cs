@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Want2Learn.ClassAndObjects
 {
-    class EmployeeService
+    public class EmployeeService : IEmployeeService
     {
         public void Print(Employee employee)
         {

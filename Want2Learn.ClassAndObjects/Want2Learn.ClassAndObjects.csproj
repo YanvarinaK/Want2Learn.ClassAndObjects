@@ -58,6 +58,9 @@
     <Compile Include="Enums\SortDirection.cs" />
     <Compile Include="FindAlgorithms.cs" />
     <Compile Include="Gender.cs" />
+    <Compile Include="IAnimalService.cs" />
+    <Compile Include="IEmployeeService.cs" />
+    <Compile Include="IPersonService.cs" />
     <Compile Include="OtherAlgorithms.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonService.cs" />

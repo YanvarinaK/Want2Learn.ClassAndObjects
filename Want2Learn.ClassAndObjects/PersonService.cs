@@ -9,7 +9,7 @@ using Want2Learn.ClassAndObjects.Enums;
 
 namespace Want2Learn.ClassAndObjects
 {
-   public class PersonService
+    public class PersonService : IPersonService
     {
         public Person FirstHighest(Person[] array)
         {
@@ -203,7 +203,7 @@ namespace Want2Learn.ClassAndObjects
             {
                 case SortDirection.Asc:
                     return persons.OrderBy(u => u.Weight).ToList();
-                   
+
                 case SortDirection.Desc:
                     return persons.OrderByDescending(u => u.Weight).ToList();
                 default:
@@ -224,7 +224,7 @@ namespace Want2Learn.ClassAndObjects
                     List<Person> AscSort = persons.OrderBy(u => u.FullName).ToList();
                     return AscSort;
                 case SortDirection.Desc:
-                   List<Person> DescSort = persons.OrderByDescending(u => u.FullName).ToList();
+                    List<Person> DescSort = persons.OrderByDescending(u => u.FullName).ToList();
                     return DescSort;
                 default:
                     return null;
@@ -310,7 +310,7 @@ namespace Want2Learn.ClassAndObjects
             Person somePerson = new Person();
             using (StreamReader streamReader = new StreamReader(fileName))
             {
-               somePerson = JsonConvert.DeserializeObject<Person>(streamReader.ReadToEnd());
+                somePerson = JsonConvert.DeserializeObject<Person>(streamReader.ReadToEnd());
             }
             return somePerson;
         }
