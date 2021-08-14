@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -250,6 +251,10 @@ namespace Want2Learn.ClassAndObjects
 
         public void WriteToTxt(Person person, string path)
         {
+            if ((person == null) || (path == null))
+            {
+                return;
+            }
             using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
             {
                 sw.WriteLine(person.GetInfo());
@@ -258,19 +263,70 @@ namespace Want2Learn.ClassAndObjects
 
         public void WriteToTxt(List<Person> persons, string path)
         {
+            if ((persons == null) || (path == null))
+            {
+                return;
+            }
             using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
             {
-                if (persons == null)
-                {
-                    sw.WriteLine("null");
-
-                }
                 for (int i = 0; i < persons.Count; i++)
                 {
                     sw.WriteLine(persons[i].GetInfo());
 
                 }
             }
+        }
+
+        public void WriteToJson(Person person, string fileName)
+        {
+            if ((person == null) || (fileName == null))
+            {
+                return;
+            }
+            using (StreamWriter sw = new StreamWriter(fileName, false, System.Text.Encoding.Default))
+            {
+                sw.WriteLine(JsonConvert.SerializeObject(person, Formatting.Indented));
+            }
+        }
+
+        public void WriteToJson(List<Person> persons, string fileName)
+        {
+            if ((persons == null) || (fileName == null))
+            {
+                return;
+            }
+            using (StreamWriter sw = new StreamWriter(fileName, false, System.Text.Encoding.Default))
+            {
+                sw.WriteLine(JsonConvert.SerializeObject(persons, Formatting.Indented));
+            }
+        }
+
+        public Person ReadFromJson(string fileName)
+        {
+            if (fileName == null)
+            {
+                return null;
+            }
+            Person somePerson = new Person();
+            using (StreamReader streamReader = new StreamReader(fileName))
+            {
+               somePerson = JsonConvert.DeserializeObject<Person>(streamReader.ReadToEnd());
+            }
+            return somePerson;
+        }
+
+        public List<Person> ReadFromJsonCollection(string fileName)
+        {
+            if (fileName == null)
+            {
+                return null;
+            }
+            List<Person> persons = new List<Person>();
+            using (StreamReader streamReader = new StreamReader(fileName))
+            {
+                persons = JsonConvert.DeserializeObject<List<Person>>(streamReader.ReadToEnd());
+            }
+            return persons;
         }
     }
 }
