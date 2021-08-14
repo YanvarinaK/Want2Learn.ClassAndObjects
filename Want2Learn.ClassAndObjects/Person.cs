@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -179,5 +180,7 @@ namespace Want2Learn.ClassAndObjects
             string Info = String.Format("ФИО: {0} {1} {2}, пол: {3}, рост: {4} см, вес: {5} кг, возраст: {6}", lastName, firstName, middleName, gender, height, weight, age);
             return Info;
         }
+
+     
     }
 }
