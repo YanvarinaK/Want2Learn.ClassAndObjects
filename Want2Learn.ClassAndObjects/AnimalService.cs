@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Want2Learn.ClassAndObjects
 {
-    public class AnimalService
+    public class AnimalService : IAnimalService
     {
         public void WriteInfo(List<Animal> animals, string filePath)
         {
