@@ -44,8 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="Animal.cs" />
+    <Compile Include="Cat.cs" />
+    <Compile Include="Dog.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeService.cs" />
+    <Compile Include="Enums\Color.cs" />
     <Compile Include="Enums\Month.cs" />
     <Compile Include="Enums\SortDirection.cs" />
     <Compile Include="FindAlgorithms.cs" />
