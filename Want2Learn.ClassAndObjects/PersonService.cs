@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -244,6 +245,31 @@ namespace Want2Learn.ClassAndObjects
                     return persons.OrderByDescending(u => u.Gender).ToList();
                 default:
                     return null;
+            }
+        }
+
+        public void WriteToTxt(Person person, string path)
+        {
+            using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
+            {
+                sw.WriteLine(person.GetInfo());
+            }
+        }
+
+        public void WriteToTxt(List<Person> persons, string path)
+        {
+            using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
+            {
+                if (persons == null)
+                {
+                    sw.WriteLine("null");
+
+                }
+                for (int i = 0; i < persons.Count; i++)
+                {
+                    sw.WriteLine(persons[i].GetInfo());
+
+                }
             }
         }
     }
