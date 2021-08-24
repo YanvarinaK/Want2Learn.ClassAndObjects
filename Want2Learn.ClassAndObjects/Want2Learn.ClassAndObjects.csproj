@@ -61,12 +61,14 @@
     <Compile Include="IAnimalService.cs" />
     <Compile Include="IEmployeeService.cs" />
     <Compile Include="IPersonService.cs" />
+    <Compile Include="IStringAlgorithms.cs" />
     <Compile Include="OtherAlgorithms.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortAlgorithms.cs" />
+    <Compile Include="StringAlgorithms.cs" />
     <Compile Include="Time.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
