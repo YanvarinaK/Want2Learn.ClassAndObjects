@@ -8,5 +8,7 @@ namespace Want2Learn.ClassAndObjects
         string VigenereEncryption(string text, string key);
 
         Dictionary<string, int> GetWordStatistic(string text);
+
+        bool IsValidEmail(string email);
     }
 }

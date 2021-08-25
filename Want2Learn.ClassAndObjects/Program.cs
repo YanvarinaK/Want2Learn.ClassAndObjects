@@ -10,6 +10,12 @@ namespace Want2Learn.ClassAndObjects
     {
         static void Main(string[] args)
         {
+            string ggg = "";
+            StringAlgorithms service = new StringAlgorithms();
+            var result = service.IsValidEmail("art--em@mail.ru");
+
+            Console.WriteLine(result);
+            Console.ReadKey();
         }
     }
 }

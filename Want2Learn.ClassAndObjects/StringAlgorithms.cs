@@ -10,6 +10,7 @@ namespace Want2Learn.ClassAndObjects
     {
         const string EngAlphabet = "abcdefghijklmnopqrstuvwxyz";
         const string RusAlphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+        const string ValidEmailSymbols = "abcdefghijklmnopqrstuvwxyz0123456789_-.";
         private string GetStringOfKeys(string text, string key)
         {
             string StringOfKeys = String.Join("", Enumerable.Repeat(key, text.Length / key.Length));
@@ -124,6 +125,105 @@ namespace Want2Learn.ClassAndObjects
                 }
             }
             return StatisticsOfWords;
+        }
+
+        private bool IsValidEmailSymbol(char symbol)
+        {
+            bool IsValid = true;
+            if (!ValidEmailSymbols.Contains(symbol))
+            {
+                IsValid = false;
+            }
+            return IsValid;
+        }
+
+        private bool IsValidUserName(string email)
+        {
+            string userName = email.Remove(email.IndexOf('@'));
+            if (String.IsNullOrWhiteSpace(userName))
+            {
+                return false;
+            }
+            if ((userName.StartsWith(".")) || (userName.EndsWith(".")))
+            {
+                return false;
+            }
+            if (userName.Contains(".."))
+            {
+                return false;
+            }
+            userName = userName.ToLower();
+            for (int i = 0; i < userName.Length; i++)
+            {
+                if (IsValidEmailSymbol(userName[i]) == false)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private bool IsValidDomen(string email)
+        {
+            string domen = email.Substring(email.IndexOf('@') + 1);
+            domen = domen.ToLower();
+            if (String.IsNullOrWhiteSpace(domen))
+            {
+                return false;
+            }
+            string domenEnd = domen.Substring(domen.LastIndexOf('.') + 1);
+            if (String.IsNullOrWhiteSpace(domenEnd))
+            {
+                return false;
+            }
+            for (int i = 0; i < domenEnd.Length; i++)
+            {
+                if (!EngAlphabet.Contains(domenEnd[i]))
+                {
+                    return false;
+                }
+            }
+            if (domen.StartsWith("."))
+            {
+                return false;
+            }
+            if ((domen.StartsWith("-")) || (domen.EndsWith("-")))
+            {
+                return false;
+            }
+            if ((domen.Contains("..")) || (domen.Contains("--")))
+            {
+                return false;
+            }
+            for (int i = 0; i < domen.LastIndexOf('.'); i++)
+            {
+                if (!IsValidEmailSymbol(domen[i]))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool IsValidEmail(string email)
+        {
+            if (String.IsNullOrWhiteSpace(email))
+            {
+                return false;
+            }
+            if (!email.Contains('@'))
+            {
+                return false;
+            }
+            if (!IsValidUserName(email))
+            {
+                return false;
+            }
+            if (!IsValidDomen(email))
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
