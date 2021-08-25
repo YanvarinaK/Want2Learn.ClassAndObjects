@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Want2Learn.ClassAndObjects.Shapes;
 
 namespace Want2Learn.ClassAndObjects
 {
@@ -10,12 +11,6 @@ namespace Want2Learn.ClassAndObjects
     {
         static void Main(string[] args)
         {
-            string ggg = "";
-            StringAlgorithms service = new StringAlgorithms();
-            var result = service.IsValidEmail("art--em@mail.ru");
-
-            Console.WriteLine(result);
-            Console.ReadKey();
         }
     }
 }
