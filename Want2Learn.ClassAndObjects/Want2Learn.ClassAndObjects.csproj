@@ -53,6 +53,19 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Want2Learn.Interfaces\Want2Learn.Interfaces.csproj">
+      <Project>{90b015f6-d323-44d7-9be7-559239f48657}</Project>
+      <Name>Want2Learn.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Want2Learn.Models\Want2Learn.Models.csproj">
+      <Project>{e7a4587b-c488-4ea1-ba43-be08b6e6eb47}</Project>
+      <Name>Want2Learn.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Want2Learn.Services\Want2Learn.Services.csproj">
+      <Project>{d33ecf6a-e9d6-4fba-88c0-a49d0c68f541}</Project>
+      <Name>Want2Learn.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

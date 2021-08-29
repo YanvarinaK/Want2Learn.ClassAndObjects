@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Want2Learn.ClassAndObjects.Shapes;
+﻿using Want2Learn.Interfaces;
+using Want2Learn.Services;
 
 namespace Want2Learn.ClassAndObjects
 {
@@ -11,6 +7,7 @@ namespace Want2Learn.ClassAndObjects
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }
