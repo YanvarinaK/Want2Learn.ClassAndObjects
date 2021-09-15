@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WantToLearn.ClassAndObjects.CustomDataStructure
+namespace Want2Learn.ClassAndObjects.CustomStructures
 {
     public class Tape<T>
     {
@@ -54,11 +54,11 @@ namespace WantToLearn.ClassAndObjects.CustomDataStructure
 
         private TapeItem<T> GetByIndex(int index)
         {
-            if ((FirstItem == null) || (index >= Count) || (index< 0))
+            if (FirstItem == null || index >= Count || index < 0)
             {
                 return null;
             }
-            if (index >= Count/2)
+            if (index >= Count / 2)
             {
                 TapeItem<T> currentItem = LastItem;
                 int counter = Count - 1;
@@ -80,7 +80,7 @@ namespace WantToLearn.ClassAndObjects.CustomDataStructure
                 }
                 return currentItem;
             }
-            
+
         }
 
         public T GetValueByIndex(int index)
@@ -88,7 +88,7 @@ namespace WantToLearn.ClassAndObjects.CustomDataStructure
             TapeItem<T> needfulItem = GetByIndex(index);
             if (needfulItem == null)
             {
-                return default(T);
+                return default;
             }
             return needfulItem.Value;
         }

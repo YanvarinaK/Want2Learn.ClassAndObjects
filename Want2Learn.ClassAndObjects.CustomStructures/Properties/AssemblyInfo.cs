@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WantToLearn.ClassAndObjects.CustomDataStructure")]
+[assembly: AssemblyTitle("Want2Learn.ClassAndObjects.CustomStructures")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WantToLearn.ClassAndObjects.CustomDataStructure")]
+[assembly: AssemblyProduct("Want2Learn.ClassAndObjects.CustomStructures")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("381f017a-2324-4a6e-ae24-dc0ba9f136d5")]
+[assembly: Guid("3c8abd4c-9f14-4fb2-9c01-774f68050d7b")]
 
 // Version information for an assembly consists of the following four values:
 //

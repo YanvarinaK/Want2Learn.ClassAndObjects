@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WantToLearn.ClassAndObjects.CustomDataStructure
+namespace Want2Learn.ClassAndObjects.CustomStructures
 {
     public class TapeItem<T>
     {

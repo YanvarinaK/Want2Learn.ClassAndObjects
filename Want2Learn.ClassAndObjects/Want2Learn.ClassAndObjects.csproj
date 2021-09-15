@@ -54,6 +54,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Want2Learn.ClassAndObjects.CustomStructures\Want2Learn.ClassAndObjects.CustomStructures.csproj">
+      <Project>{3C8ABD4C-9F14-4FB2-9C01-774F68050D7B}</Project>
+      <Name>Want2Learn.ClassAndObjects.CustomStructures</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Want2Learn.Interfaces\Want2Learn.Interfaces.csproj">
       <Project>{90b015f6-d323-44d7-9be7-559239f48657}</Project>
       <Name>Want2Learn.Interfaces</Name>

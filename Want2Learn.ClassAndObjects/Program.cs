@@ -1,4 +1,5 @@
-﻿using Want2Learn.Interfaces;
+﻿using Want2Learn.ClassAndObjects.CustomStructures;
+using Want2Learn.Interfaces;
 using Want2Learn.Services;
 
 namespace Want2Learn.ClassAndObjects
@@ -7,7 +8,6 @@ namespace Want2Learn.ClassAndObjects
     {
         static void Main(string[] args)
         {
-            
         }
     }
 }
