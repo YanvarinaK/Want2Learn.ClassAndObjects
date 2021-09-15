@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{75407AFC-84CC-46CD-9DE1-F7287A8855DE}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Want2Learn.ClassAndObjects</RootNamespace>
-    <AssemblyName>Want2Learn.ClassAndObjects</AssemblyName>
+    <ProjectGuid>{3C8ABD4C-9F14-4FB2-9C01-774F68050D7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Want2Learn.ClassAndObjects.CustomStructures</RootNamespace>
+    <AssemblyName>Want2Learn.ClassAndObjects.CustomStructures</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,30 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Want2Learn.ClassAndObjects.CustomStructures\Want2Learn.ClassAndObjects.CustomStructures.csproj">
-      <Project>{3C8ABD4C-9F14-4FB2-9C01-774F68050D7B}</Project>
-      <Name>Want2Learn.ClassAndObjects.CustomStructures</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Want2Learn.Interfaces\Want2Learn.Interfaces.csproj">
-      <Project>{90b015f6-d323-44d7-9be7-559239f48657}</Project>
-      <Name>Want2Learn.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Want2Learn.Models\Want2Learn.Models.csproj">
-      <Project>{e7a4587b-c488-4ea1-ba43-be08b6e6eb47}</Project>
-      <Name>Want2Learn.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Want2Learn.Services\Want2Learn.Services.csproj">
-      <Project>{d33ecf6a-e9d6-4fba-88c0-a49d0c68f541}</Project>
-      <Name>Want2Learn.Services</Name>
-    </ProjectReference>
+    <Compile Include="Tape.cs" />
+    <Compile Include="TapeItem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
