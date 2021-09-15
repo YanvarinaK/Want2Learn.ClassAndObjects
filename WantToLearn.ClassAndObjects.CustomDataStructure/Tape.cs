@@ -9,18 +9,7 @@ namespace WantToLearn.ClassAndObjects.CustomDataStructure
     public class Tape<T>
     {
         private TapeItem<T> FirstItem { get; set; }
-        private TapeItem<T> LastItem
-        {
-            get
-            {
-                TapeItem<T> lastItem = FirstItem;
-                while (lastItem.NextItem != null)
-                {
-                    lastItem = lastItem.NextItem;
-                }
-                return lastItem;
-            }
-        }
+        private TapeItem<T> LastItem { get; set; }
         public int Count { get; private set; } = 0;
 
 
@@ -33,11 +22,13 @@ namespace WantToLearn.ClassAndObjects.CustomDataStructure
             if (FirstItem == null)
             {
                 FirstItem = newItem;
+                LastItem = newItem;
                 Count++;
                 return;
             }
             LastItem.NextItem = newItem;
             newItem.PrevItem = LastItem;
+            LastItem = newItem;
             Count++;
         }
 
@@ -51,54 +42,55 @@ namespace WantToLearn.ClassAndObjects.CustomDataStructure
             if (FirstItem == null)
             {
                 FirstItem = newItem;
+                LastItem = newItem;
                 Count++;
                 return;
             }
             newItem.NextItem = FirstItem;
+            FirstItem.PrevItem = newItem;
             FirstItem = newItem;
             Count++;
         }
 
         private TapeItem<T> GetByIndex(int index)
         {
-            if (FirstItem == null)
+            if ((FirstItem == null) || (index >= Count) || (index< 0))
             {
                 return null;
             }
-            int counter = 0;
-            TapeItem<T> currentItem = FirstItem;
-            while (counter != index)
+            if (index >= Count/2)
             {
-                if (currentItem.NextItem == null)
+                TapeItem<T> currentItem = LastItem;
+                int counter = Count - 1;
+                while (counter != index)
                 {
-                    return null;
+                    currentItem = currentItem.PrevItem;
+                    counter--;
                 }
-                currentItem = currentItem.NextItem;
-                counter++;
+                return currentItem;
             }
-
-            return currentItem;
+            else
+            {
+                TapeItem<T> currentItem = FirstItem;
+                int counter = 0;
+                while (counter != index)
+                {
+                    currentItem = currentItem.NextItem;
+                    counter++;
+                }
+                return currentItem;
+            }
+            
         }
 
         public T GetValueByIndex(int index)
         {
-            if (FirstItem == null)
+            TapeItem<T> needfulItem = GetByIndex(index);
+            if (needfulItem == null)
             {
                 return default(T);
             }
-            int counter = 0;
-            TapeItem<T> currentItem = FirstItem;
-            while (counter != index)
-            {
-                if (currentItem.NextItem == null)
-                {
-                    return default(T);
-                }
-                currentItem = currentItem.NextItem;
-                counter++;
-            }
-
-            return currentItem.Value;
+            return needfulItem.Value;
         }
 
         public void RemoveFromStart()
@@ -109,8 +101,7 @@ namespace WantToLearn.ClassAndObjects.CustomDataStructure
 
         public void RemoveFromEnd()
         {
-            TapeItem<T> itemBeforeLast = GetByIndex(Count - 2);
-            itemBeforeLast.NextItem = null;
+            LastItem = LastItem.PrevItem;
             Count--;
         }
     }
